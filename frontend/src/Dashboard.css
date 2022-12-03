@@ -1,0 +1,20 @@
+.dashboard {
+  width: 50%;
+  margin: 7rem auto;
+}
+.dashboard table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.dashboard table td,
+.dashboard table th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.dashboard table tr:nth-child(even) {
+  background-color: #dddddd;
+}
