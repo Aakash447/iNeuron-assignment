@@ -17,7 +17,7 @@ const allUsers = () => {
 // };
 
 const deleteUser = (userID) => {
-  return axiosInstance.get("/deleteUser/" + userID);
+  return axiosInstance.delete("/deleteUser/" + userID);
 };
 
 export { addUser, loginUser, allUsers, deleteUser };

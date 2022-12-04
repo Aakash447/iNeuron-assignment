@@ -127,7 +127,6 @@ const allUsers = (req, res) => {
 };
 
 const deleteUser = (req, res) => {
-  console.log("req:", req.params);
   User.findByIdAndDelete(req.params.userID)
     .then((doc) => {
       if (!doc) {
