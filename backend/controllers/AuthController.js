@@ -146,9 +146,36 @@ const deleteUser = (req, res) => {
     });
 };
 
+const updateUser = (req, res) => {
+  console.log("req.params:", req.params);
+  console.log("req.body:", req.body);
+  User.findByIdAndUpdate(req.params.userID, {
+    $set: {
+      ...req.body,
+    },
+  })
+    .then((doc) => {
+      if (!doc) {
+        return res.status(404).json({
+          message: "Not found",
+        });
+      } else {
+        return res.status(200).json({
+          message: "User Updated",
+        });
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({
+        error: err,
+      });
+    });
+};
+
 module.exports = {
   register,
   login,
   allUsers,
   deleteUser,
+  updateUser,
 };
